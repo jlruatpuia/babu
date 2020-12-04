@@ -20,4 +20,5 @@ Route::post('/login', [UsersController::class, 'login']);
 
 Route::middleware('auth:api')->group(function() {
     Route::get('/logout', [UsersController::class, 'logout']);
+    Route::resource('/customers', \App\Http\Controllers\api\CustomersController::class);
 });
